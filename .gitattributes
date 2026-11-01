@@ -1,0 +1,32 @@
+* text=auto eol=lf
+
+# Windows command files must remain directly executable by cmd/PowerShell.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Give source and documentation useful diffs.
+*.c text diff=cpp
+*.cc text diff=cpp
+*.cpp text diff=cpp
+*.h text diff=cpp
+*.hpp text diff=cpp
+*.md text diff=markdown
+
+
+# Never attempt textual merges or diffs for binary artifacts.
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.zip binary
+*.7z binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.wav binary
+
+# MinHook ships this Windows resource as UTF-16LE.
+/third_party/minhook/dll_resources/MinHook.rc binary

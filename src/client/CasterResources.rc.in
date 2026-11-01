@@ -1,0 +1,2 @@
+// The id must equal QOH99_RES_OPPONENT_JOINED_SOUND in Main.cpp; the type must be WAVE, which PlaySound(SND_RESOURCE) looks up.
+@QOH99_RES_OPPONENT_JOINED_SOUND@ WAVE "@QOH99_OPPONENT_JOINED_SOUND@"

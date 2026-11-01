@@ -1,0 +1,20 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{c,cc,cpp,h,hpp}]
+indent_size = 4
+
+[*.{py,json,toml,yml,yaml}]
+indent_size = 4
+
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+
+[*.md]
+trim_trailing_whitespace = false

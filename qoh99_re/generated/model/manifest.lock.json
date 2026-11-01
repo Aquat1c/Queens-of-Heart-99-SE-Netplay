@@ -1,0 +1,49 @@
+{
+  "builds": [
+    {
+      "binary_path": "december/QOH99.EXE",
+      "binary_sha256": "C41E755E6609B39749716FEE02D3A393EF8A11F9D8BF84419AA9131B5E91EB63",
+      "binary_size": 704512,
+      "coff_timestamp": "0x3A34FFB4",
+      "id": "game_2000"
+    },
+    {
+      "binary_path": "november/qoh99.exe",
+      "binary_sha256": "A79002592953E8D9ACE3E363B3115CE4452C1A0789EB5B17C9BCB032AF27F1F6",
+      "binary_size": 704512,
+      "coff_timestamp": "0x3A19A8A9",
+      "id": "se_2006"
+    }
+  ],
+  "counts": {
+    "builds": 2,
+    "data_symbols": 105,
+    "functions": 44,
+    "merged_native_symbols": 255,
+    "native_symbols": 106,
+    "pointer_children": 4,
+    "regions": 97,
+    "sizes": 14
+  },
+  "generated_outputs": {
+    "include/qoh99/generated/AddressConstants.hpp": "1D93BC0A8B3A6B132AC1F14A630F7840895E3C8E66F353F6B786FF45BD97CC4D",
+    "include/qoh99/generated/BuildProfiles.hpp": "B80C0BFFA00C34F67227BCC7CCA7A8BC00862E9996BFCDC2102686870F36BE66",
+    "include/qoh99/generated/FunctionCatalog.hpp": "266E1120EC53A315D6F0F5BE54592A9F3585AC874BBEB09C865851137344B78E",
+    "include/qoh99/generated/GameplayRegions.hpp": "F6DFC0C28244D7B37FA05B14BD7BF20771A4BB18D8F8A7594057A43651E44821",
+    "include/qoh99/generated/NativeSymbolCatalog.hpp": "9E984A59598E1D38A0FC576C4AD3A30053E42246B0480A71E484A1557EA54390"
+  },
+  "generator": {
+    "path": "tools/generate_model.py",
+    "sha256": "FCD6CEA1638D1CCF6C7F9E9D81D2A31E5B838085B146191A3DDEA288228AFFC4"
+  },
+  "generator_version": 1,
+  "manifest": {
+    "path": "model/qoh99_manifest.toml",
+    "sha256": "D26EEE01FA4189EE47106FC23253A82709A2472EAEB93D86D0CFC49C332581EE"
+  },
+  "migration": {
+    "region_policy": "legacy_runtime_parity_pending_audited_splits",
+    "runtime_consumers": "explicit_runtime_profiles"
+  },
+  "schema_version": 1
+}

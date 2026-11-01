@@ -1,0 +1,44 @@
+# Build output
+/BUILD/
+/build/
+/dist/
+/out/
+/Testing/
+*.zip
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.log
+logs/
+
+# Editor and local state
+/.vs/
+/.vscode/
+/.idea/
+*.user
+__pycache__/
+
+# Game files and research dumps never belong here
+*.exe
+*.iso
+*.i64
+*.idb
+*.exe.c
+*.EXE.c
+*.avi
+*.AVI
+
+# Documentation is limited to the public set
+*.md
+!/README.md
+!/README_ja.md
+!/docs/
+!/docs/HOW_IT_WORKS.md
+
+# Vendored runtime binaries the build requires
+*.dll
+*.lib
+!/third_party/SDL3/lib/x86/SDL3.dll
+!/third_party/SDL3/lib/x86/SDL3.lib
+!/assets/ir50_32.dll

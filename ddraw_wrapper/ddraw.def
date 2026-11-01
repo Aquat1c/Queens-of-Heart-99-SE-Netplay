@@ -1,0 +1,53 @@
+; ddraw.def  –  Export table for the EFZ DirectDraw wrapper DLL
+; The DLL must be named "ddraw.dll" and placed next to the game EXE.
+;
+; The exact names and ordinals are a release contract checked by the
+; distribution verifier. The game itself uses DirectDrawCreate and
+; DirectDrawEnumerateA.
+
+LIBRARY ddraw
+
+EXPORTS
+    DirectDrawCreate          @1
+    DirectDrawCreateEx        @2
+    DirectDrawCreateClipper   @3
+    DirectDrawEnumerateA      @4
+    DirectDrawEnumerateW      @5
+    DirectDrawEnumerateExA    @6
+    DirectDrawEnumerateExW    @7
+    EFZDDRAW_RegisterOverlayCallback @8
+    EFZDX9_RegisterNetplayHudProvider @9
+    EFZDX9_RegisterOverlayProvider @10
+    EFZDX9_RegisterTrainingMenuBridge @11
+    EFZDDRAW_SetFrameLimit @12
+    EFZDDRAW_GetNetplayPacingAbi @13
+    EFZDDRAW_PrepareOverlayDevice @14
+    EFZDX9_RegisterTrainingUiProvider @15
+    EFZDX9_RegisterInputDisplayProvider @16
+    EFZDX9_RegisterReplayTransportProvider @17
+    EFZDDRAW_PresentHeldFrame @18
+    EFZDX9_Presenter_SubmitMenuNavigation @19
+    EFZDX9_Presenter_ToggleMenu @20
+    EFZDX9_Presenter_SetMenuNavigationLabels @21
+    ; Resolved by the injected DLL to decide whether to forward menu
+    ; navigation. It was declared and defined but never listed here, so
+    ; GetProcAddress returned null, menuOverlayVisible() answered false
+    ; forever and the whole controller path was dead -- silently, because
+    ; a missing export is exactly how an older wrapper is meant to behave.
+    EFZDX9_Presenter_IsMenuVisible @22
+    ; The palette seam (see render_dx9_imgui.cpp). Netplay sends the local
+    ; player's chosen palette to the peer and replay stores it in the
+    ; container; both hand it back through Submit so one validator decides
+    ; what may reach a fighter's colours.
+    EFZDDRAW_QueryPalette @23
+    EFZDDRAW_SubmitPalette @24
+    ; Which slots this machine may load a local .pal for. Netplay sets the
+    ; one the local player drives; replay playback sets none.
+    EFZDDRAW_SetPaletteOwnership @25
+    ; Spectator hotkeys.
+    EFZDX9_RegisterSpectatorHotkeySink @26
+    EFZDDRAW_QueryWrapperHotkey @27
+    EFZDX9_SetReplayDisplayFlags @28
+    EFZDX9_QueryReplayDisplayFlags @29
+    DllCanUnloadNow           PRIVATE
+    DllGetClassObject         PRIVATE
