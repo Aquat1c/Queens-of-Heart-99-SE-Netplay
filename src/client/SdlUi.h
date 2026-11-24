@@ -11,7 +11,7 @@
 namespace qclient {
 namespace ui {
 
-inline constexpr const char* kCasterVersion = "1.1.1";
+inline constexpr const char* kCasterVersion = "1.1.2";
 
 void setDetectedGameEdition(const std::string& edition);
 const std::string& detectedGameEdition();

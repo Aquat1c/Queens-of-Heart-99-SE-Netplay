@@ -10820,7 +10820,8 @@ void PaletteAutoCharSelectTick()
         }
 
         /* The palette stage reads (dword_8A654C[head] & 7) - 1: D alone (8) is inert, A|D (9) masks to the native confirm. */
-        const bool atColourStage = (confirm == 2 || previousConfirm == 2);
+        /* Only a D that arrives while already at the colour stage: the A+D that picks an alternate form lands on the 1->2 tick. */
+        const bool atColourStage = (previousConfirm == 2);
         if (head != self.lastHead || self.lastHead < 0)
         {
             int witness = 0;
